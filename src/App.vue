@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color: #ffcdd2">
+  <v-app style="background-color: #81c9fa">
     <NavBar @busqueda="newCad = $event" />
     <v-main>
       <router-view :busqueda="newCad" />

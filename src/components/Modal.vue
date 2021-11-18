@@ -6,7 +6,7 @@
       fullscreen
       hide-overlay
     >
-      <v-card style="background-color: #ffcdd2">
+      <v-card style="background-color: #81c9fa">
         <v-toolbar dark color="primary">
           <v-btn icon dark @click="cancelar()">
             <v-icon>mdi-close</v-icon>

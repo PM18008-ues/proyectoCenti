@@ -20,7 +20,7 @@
             <v-card>
               <v-card-title>Marca</v-card-title>
               <v-card-text
-                style="border-top-style: dotted; border-color: #ffcdd2"
+                style="border-top-style: dotted; border-color: #81c9fa"
               >
                 <v-checkbox
                   v-model="marcas"
@@ -63,7 +63,7 @@
             <v-card>
               <v-card-title>Sistema</v-card-title>
               <v-card-text
-                style="border-top-style: dotted; border-color: #ffcdd2"
+                style="border-top-style: dotted; border-color: #81c9fa"
               >
                 <v-checkbox
                   v-model="sistemas"
@@ -91,7 +91,7 @@
             <v-card>
               <v-card-title>Pantalla</v-card-title>
               <v-card-text
-                style="border-top-style: dotted; border-color: #ffcdd2"
+                style="border-top-style: dotted; border-color: #81c9fa"
               >
                 <v-checkbox
                   v-model="pantallas"

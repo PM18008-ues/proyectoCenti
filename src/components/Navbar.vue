@@ -6,7 +6,7 @@
       <!-- logo de la tienda -->
       <v-toolbar-title>
         <v-btn plain class="white--text" style="text-decoration: none" :to="'/'"
-          ><v-icon large>mdi-cellphone-check</v-icon> Tienda CellPhone</v-btn
+          ><v-icon large>mdi-cellphone-play</v-icon> Tienda CellPhone</v-btn
         >
       </v-toolbar-title>
 
