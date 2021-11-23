@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <!-- Filtros de la tienda -->
-      <v-col lg="3">
+      <v-col lg="3" class="hidden-sm-and-down">
         <!-- switch de nuevo -->
         <v-row class="align-center">
           <v-col lg="3">
@@ -123,10 +123,10 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="9">
+      <v-col cols="12" sm="12" lg="9" md="9">
         <v-row>
           <!-- rango de precios -->
-          <v-col lg="6">
+          <v-col lg="6" cols="12" md="6" sm="6" >
             <v-card flat color="transparent">
               <v-card-title class="justify-center"
                 >Rango de precios ($)</v-card-title
@@ -172,7 +172,7 @@
             </v-card>
           </v-col>
           <!-- ordenar por -->
-          <v-col lg="6">
+          <v-col cols="12" lg="6" md="6" sm="6">
             <v-card class="pt-10">
               <v-row>
                 <v-col lg="6">

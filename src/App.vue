@@ -26,7 +26,7 @@ export default {
   methods: {
     mandarCompras() {
       bus.$emit("showCarrito", this.compras[this.compras.length - 1]);
-      console.log("mande la basura");
+      console.log("Si funciona ");
     },
   },
 
