@@ -3,16 +3,22 @@
     <v-row>
       <!-- Filtros de la tienda -->
       <v-col lg="3" class="hidden-sm-and-down">
-        <!-- switch de nuevo -->
-        <v-row class="align-center">
-          <v-col lg="3">
-            <v-switch v-model="switch1"></v-switch>
-          </v-col>
-          <v-col lg="2">
-            <label v-show="switch1 === false">Usados</label>
-            <label v-show="switch1 === true">Nuevos</label>
+        <v-row>
+          <v-col cols="12">
+            <v-card>
+              <v-row class="align-center">
+                <v-col lg="3">
+                  <v-switch v-model="switch1"></v-switch>
+                </v-col>
+                <v-col lg="4">
+                  <label v-show="switch1 === false">Usados</label>
+                  <label v-show="switch1 === true">Nuevos</label>
+                </v-col>
+              </v-row>
+            </v-card>
           </v-col>
         </v-row>
+        <!-- switch de nuevo -->
 
         <!-- marcas -->
         <v-row>
@@ -20,7 +26,7 @@
             <v-card>
               <v-card-title>Marca</v-card-title>
               <v-card-text
-                style="border-top-style: dotted; border-color: #81c9fa"
+                style="border-top-style: solid; border-color: #81c9fa"
               >
                 <v-checkbox
                   v-model="marcas"
@@ -63,7 +69,7 @@
             <v-card>
               <v-card-title>Sistema</v-card-title>
               <v-card-text
-                style="border-top-style: dotted; border-color: #81c9fa"
+                style="border-top-style: solid; border-color: #81c9fa"
               >
                 <v-checkbox
                   v-model="sistemas"
@@ -91,7 +97,7 @@
             <v-card>
               <v-card-title>Pantalla</v-card-title>
               <v-card-text
-                style="border-top-style: dotted; border-color: #81c9fa"
+                style="border-top-style: solid; border-color: #81c9fa"
               >
                 <v-checkbox
                   v-model="pantallas"
@@ -125,8 +131,35 @@
       </v-col>
       <v-col cols="12" sm="12" lg="9" md="9">
         <v-row>
+          <!-- ordenar por -->
+          <v-col cols="12" lg="6" md="6" sm="6">
+            <v-card class="pt-10">
+              <v-row>
+                <v-col lg="6">
+                  <v-row class="justify-center"
+                    ><label>Ordenar Por:</label></v-row
+                  >
+                  <v-row class="justify-center">
+                    <v-radio-group v-model="radioGroup">
+                      <v-radio :label="`Asc`" :value="1"></v-radio>
+                      <v-radio :label="`Des`" :value="2"></v-radio>
+                    </v-radio-group>
+                  </v-row>
+                </v-col>
+                <v-col lg="5">
+                  <v-select
+                    :items="items"
+                    label="Opcion"
+                    v-model="opcion"
+                    outlined
+                  ></v-select>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+
           <!-- rango de precios -->
-          <v-col lg="6" cols="12" md="6" sm="6" >
+          <v-col lg="6" cols="12" md="6" sm="6">
             <v-card flat color="transparent">
               <v-card-title class="justify-center"
                 >Rango de precios ($)</v-card-title
@@ -169,32 +202,6 @@
                   </v-col>
                 </v-row>
               </v-card-text>
-            </v-card>
-          </v-col>
-          <!-- ordenar por -->
-          <v-col cols="12" lg="6" md="6" sm="6">
-            <v-card class="pt-10">
-              <v-row>
-                <v-col lg="6">
-                  <v-row class="justify-center"
-                    ><label>Ordenar Por:</label></v-row
-                  >
-                  <v-row class="justify-center">
-                    <v-radio-group v-model="radioGroup">
-                      <v-radio :label="`Asc`" :value="1"></v-radio>
-                      <v-radio :label="`Des`" :value="2"></v-radio>
-                    </v-radio-group>
-                  </v-row>
-                </v-col>
-                <v-col lg="5">
-                  <v-select
-                    :items="items"
-                    label="Opcion"
-                    v-model="opcion"
-                    outlined
-                  ></v-select>
-                </v-col>
-              </v-row>
             </v-card>
           </v-col>
         </v-row>
@@ -273,6 +280,13 @@
         </v-row>
       </v-col>
     </v-row>
+    <v-footer padless color="primary">
+      <v-col class="text-center white--text" cols="12">
+        <strong>Daniel Ernesto Centi Santiago CS17010</strong> - FPI-2021
+        <br />
+        UES FMOcc
+      </v-col>
+    </v-footer>
   </v-container>
 </template>
 
@@ -316,13 +330,13 @@ export default {
       page: 1,
 
       // #articulos por pagina default
-      e1: 5,
+      e1: 3,
 
       // tamanio de paginador
       tamanio: 0,
 
       // articulos por pagina
-      articulos: [5, 10, 15, 20, 25],
+      articulos: [3, 9, 12, 21, 27],
     };
   },
 

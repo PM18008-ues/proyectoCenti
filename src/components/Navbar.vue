@@ -18,7 +18,7 @@
       </v-toolbar-title>
 
       <v-text-field
-        label="Search"
+        label="Buscar"
         v-model="cadena"
         solo-inverted
         hide-details
@@ -38,10 +38,10 @@
       <v-btn plain class="hidden-sm-and-down" :to="'/'">Inicio</v-btn>
       <v-btn plain class="hidden-sm-and-down" :to="'/'">Estadisticas</v-btn>
       <v-btn icon class="hidden-sm-and-down" @click="openModal"
-        ><v-icon large>mdi-plus-circle</v-icon></v-btn
+        ><v-icon large>mdi-plus-box</v-icon></v-btn
       >
       <v-btn class="hidden-sm-and-down" icon @click="openCarrito"
-        ><v-icon large>mdi-cart</v-icon></v-btn
+        ><v-icon large>mdi-cart-plus</v-icon></v-btn
       >
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app fixed temporary>

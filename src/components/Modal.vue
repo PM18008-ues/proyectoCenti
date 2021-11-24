@@ -20,76 +20,6 @@
           <v-row>
             <!-- Form de nuevo producto -->
 
-            <v-col lg="6">
-              <v-card>
-                <v-card-text>
-                  <v-row class="pb-2"
-                    ><v-radio-group v-model="radioGroup">
-                      <v-radio :label="`Nuevo`" :value="1"></v-radio>
-                      <v-radio :label="`Usado`" :value="2"></v-radio>
-                    </v-radio-group>
-                  </v-row>
-                  <v-row class="pb-8">
-                    <v-text-field
-                      style="max-width: 200px"
-                      :rules="rules"
-                      hide-details="auto"
-                      solo
-                      v-model="marca"
-                      ><label slot="prepend">Marca:</label>
-                    </v-text-field>
-                  </v-row>
-                  <v-row class="pb-1">
-                    <v-text-field style="max-width: 200px" solo v-model="modelo"
-                      ><label slot="prepend">Modelo:</label>
-                    </v-text-field>
-                  </v-row>
-                  <v-row class="pb-8">
-                    <v-text-field
-                      style="max-width: 200px"
-                      :rules="rules"
-                      hide-details="auto"
-                      label="0.0"
-                      solo
-                      v-model="pantalla"
-                      ><label slot="prepend">Pantalla:</label
-                      ><label slot="append">Pulgadas</label>
-                    </v-text-field>
-                  </v-row>
-                  <v-row class="pb-4">
-                    <v-select
-                      :items="sistemas"
-                      style="max-width: 200px"
-                      solo
-                      v-model="sistema"
-                      ><label slot="prepend">Sistema:</label>
-                    </v-select>
-                  </v-row>
-                  <v-row class="pb-1">
-                    <v-text-field
-                      style="max-width: 200px"
-                      solo
-                      v-model="rom"
-                      type="number"
-                      ><label slot="prepend">ROM:</label>
-                      <label slot="append">GB</label>
-                    </v-text-field>
-                  </v-row>
-                  <v-row class="pb-1">
-                    <v-text-field
-                      style="max-width: 200px"
-                      solo
-                      v-model="ram"
-                      type="number"
-                    >
-                      <label slot="prepend">RAM:</label
-                      ><label slot="append">GB</label>
-                    </v-text-field>
-                  </v-row>
-                </v-card-text>
-              </v-card>
-            </v-col>
-
             <!-- form datos extra -->
 
             <v-col lg="6">
@@ -159,6 +89,76 @@
                   <label slot="prepend">$</label>
                 </v-text-field>
               </v-row>
+            </v-col>
+
+            <v-col lg="6">
+              <v-card>
+                <v-card-text>
+                  <v-row class="pb-2"
+                    ><v-radio-group v-model="radioGroup">
+                      <v-radio :label="`Nuevo`" :value="1"></v-radio>
+                      <v-radio :label="`Usado`" :value="2"></v-radio>
+                    </v-radio-group>
+                  </v-row>
+                  <v-row class="pb-8">
+                    <v-text-field
+                      style="max-width: 200px"
+                      :rules="rules"
+                      hide-details="auto"
+                      solo
+                      v-model="marca"
+                      ><label slot="prepend">Marca:</label>
+                    </v-text-field>
+                  </v-row>
+                  <v-row class="pb-1">
+                    <v-text-field style="max-width: 200px" solo v-model="modelo"
+                      ><label slot="prepend">Modelo:</label>
+                    </v-text-field>
+                  </v-row>
+                  <v-row class="pb-8">
+                    <v-text-field
+                      style="max-width: 200px"
+                      :rules="rules"
+                      hide-details="auto"
+                      label="0.0"
+                      solo
+                      v-model="pantalla"
+                      ><label slot="prepend">Pantalla:</label
+                      ><label slot="append">Pulgadas</label>
+                    </v-text-field>
+                  </v-row>
+                  <v-row class="pb-4">
+                    <v-select
+                      :items="sistemas"
+                      style="max-width: 200px"
+                      solo
+                      v-model="sistema"
+                      ><label slot="prepend">Sistema:</label>
+                    </v-select>
+                  </v-row>
+                  <v-row class="pb-1">
+                    <v-text-field
+                      style="max-width: 200px"
+                      solo
+                      v-model="rom"
+                      type="number"
+                      ><label slot="prepend">ROM:</label>
+                      <label slot="append">GB</label>
+                    </v-text-field>
+                  </v-row>
+                  <v-row class="pb-1">
+                    <v-text-field
+                      style="max-width: 200px"
+                      solo
+                      v-model="ram"
+                      type="number"
+                    >
+                      <label slot="prepend">RAM:</label
+                      ><label slot="append">GB</label>
+                    </v-text-field>
+                  </v-row>
+                </v-card-text>
+              </v-card>
             </v-col>
           </v-row>
           <v-row>
