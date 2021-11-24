@@ -209,7 +209,7 @@
           <!-- productos de la pagina -->
           <v-col lg="3" v-for="(producto, key) in buscarProductos" :key="key">
             <v-hover v-slot:default="{ hover }">
-              <v-card class="text-center" color="grey lighten-4">
+              <v-card class="text-center" height="350">
                 <v-img height="250px" :src="producto.imagenes[0]">
                   <v-expand-transition>
                     <div
@@ -221,7 +221,7 @@
                         text-center
                         transition-fast-in-fast-out
                         grey
-                        darken-2
+                        darken-3
                         v-card--reveal
                         display-3
                         white--text
@@ -237,12 +237,12 @@
                     </div>
                   </v-expand-transition>
                 </v-img>
-                <v-card-text>
-                  <h2 class="black--text">${{ producto.precio }}</h2>
+                <v-card-text class="text-truncate">
+                  <h2 class="green--text">${{ producto.precio }}</h2>
+                  <span>{{ producto.titulo }}</span>
+                  <br />
+                  <span>{{ producto.fecha }}</span>
                 </v-card-text>
-                <span>{{ producto.titulo }}</span>
-                <br />
-                <span>{{ producto.fecha }}</span>
               </v-card>
             </v-hover>
           </v-col>
