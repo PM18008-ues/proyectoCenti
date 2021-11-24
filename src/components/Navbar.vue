@@ -2,10 +2,17 @@
   <v-container>
     <v-app-bar app color="primary" dark>
       <!-- boton del sidenav -->
-      <v-app-bar-nav-icon class="hidden-md-and-up"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        class="hidden-md-and-up"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
       <!-- logo de la tienda -->
       <v-toolbar-title>
-        <v-btn plain class="white--text hidden-sm-and-down" style="text-decoration: none" :to="'/'"
+        <v-btn
+          plain
+          class="white--text hidden-sm-and-down"
+          style="text-decoration: none"
+          :to="'/'"
           ><v-icon large>mdi-cellphone-play</v-icon> Tienda CellPhone</v-btn
         >
       </v-toolbar-title>
@@ -28,13 +35,49 @@
       </v-text-field>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
 
-      <v-btn plain class=" hidden-sm-and-down" :to="'/'">Inicio</v-btn>
-      <v-btn plain class=" hidden-sm-and-down" :to="'/'">Estadisticas</v-btn>
-      <v-btn icon class=" hidden-sm-and-down" @click="openModal"
+      <v-btn plain class="hidden-sm-and-down" :to="'/'">Inicio</v-btn>
+      <v-btn plain class="hidden-sm-and-down" :to="'/'">Estadisticas</v-btn>
+      <v-btn icon class="hidden-sm-and-down" @click="openModal"
         ><v-icon large>mdi-plus-circle</v-icon></v-btn
       >
-      <v-btn class=" hidden-sm-and-down" icon @click="openCarrito"><v-icon large>mdi-cart</v-icon></v-btn>
+      <v-btn class="hidden-sm-and-down" icon @click="openCarrito"
+        ><v-icon large>mdi-cart</v-icon></v-btn
+      >
     </v-app-bar>
+    <v-navigation-drawer v-model="drawer" app fixed temporary>
+      <v-list>
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-cellphone-play</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-btn plain :to="'/'"><b>Tienda CellPhone</b></v-btn>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item>
+          <v-list-item-content>
+            <v-btn plain :to="'/'">Inicio</v-btn>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-btn plain @click="openModal">Nuevo Anuncio</v-btn>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-btn plain @click="openCarrito">Carrito</v-btn>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-btn plain :to="'/'">Estadisticas</v-btn>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <Modal ref="modal" @guardado="mensaje = $event"> </Modal>
     <Carrito ref="carrito"></Carrito>
 
@@ -62,6 +105,7 @@ export default {
       cadena: "",
       texto: "Se ha guardado el producto",
       mensaje: false,
+      drawer: false,
     };
   },
   components: { Modal, Carrito },
